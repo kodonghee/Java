@@ -6,7 +6,8 @@ public class Album {
     public final String albumName;
     public final int releaseYear;
     public final Artist artist;
-    public final ArrayList<Song> songList = new ArrayList<>();
+
+    private final ArrayList<Song> songList = new ArrayList<>();
 
     public Album(String name, int year, Artist artist){
         albumName = name;
@@ -19,6 +20,10 @@ public class Album {
     }
 
     public Song getTrack(int trackNumber){
+        if(trackNumber < 1 || trackNumber > songList.size()){
+            return null;
+        }
+
         return songList.get(trackNumber - 1);
     }
 }

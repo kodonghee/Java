@@ -11,7 +11,6 @@ public class Song {
         this.album = album;
     }
 
-    @Override
     public String toString(){
         return songName + " - " + artist.artistName + "\n" + album.albumName + "(" + album.releaseYear + ")";
     }
